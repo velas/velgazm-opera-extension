@@ -1,0 +1,79 @@
+{
+  "author": "https://velas.com",
+  "manifest_version": 3,
+  "name": "Velgazm",
+  "browser_action": {
+    "default_icon": {
+      "16": "images/logo-velgazm-16.png",
+      "19": "images/logo-velgazm-19.png",
+      "32": "images/logo-velgazm-32.png",
+      "38": "images/logo-velgazm-38.png",
+      "64": "images/logo-velgazm-64.png",
+      "128": "images/logo-velgazm-128.png",
+      "512": "images/logo-velgazm-512.png"
+    },
+    "default_title": "Velgazm",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "images/logo-velgazm-16.png",
+    "19": "images/logo-velgazm-19.png",
+    "32": "images/logo-velgazm-32.png",
+    "38": "images/logo-velgazm-38.png",
+    "64": "images/logo-velgazm-64.png",
+    "128": "images/logo-velgazm-128.png",
+    "512": "images/logo-velgazm-512.png"
+  },
+  "short_name": "Velgazm",
+  "description": "This extension runs Velgazm wallet",
+  "version": "1.0.0",
+  "permissions": [
+    "clipboardWrite"
+  ],
+  "action": {
+    "default_icon": "images/logo-velgazm-128.png",
+    "default_title": "Velgazm Extension",
+    "default_popup": "popup.html"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+      "default": "Alt+Shift+E"
+    }
+   }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://evmexplorer.velas.com/*",
+				"https://evmexplorer.testnet.velas.com/*",
+        "https://api.velas.com/*"
+      ],
+
+      "js": ["onload.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+		{
+			"resources": [
+				"*.png",
+				"*.svg",
+				"*.eot",
+				"*.woff",
+				"*.svg",
+				"*.ttf"
+			],
+      "matches": [
+        "https://evmexplorer.velas.com/*",
+				"https://evmexplorer.testnet.velas.com/*",
+        "https://api.velas.com/*"
+			]
+		}
+	],
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' ; object-src 'self'; 'sha256-FNyELJrESv8nepjeyU+FgyVJRhOoElL2FDAR2b26MvA='"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/style.css"],"names":[],"mappings":"AAAA,+DACE,UACF","file":"main.a9f08bc9.chunk.css","sourcesContent":["[data-testid=\"hiddenAccountsList\"] [data-list-item=\"account-item\"]{\n  opacity: 0.5;\n}"]}
